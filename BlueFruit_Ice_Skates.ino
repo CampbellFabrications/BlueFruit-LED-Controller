@@ -14,8 +14,6 @@
 #define PIN                     6
 #define NUMPIXELS               16
 
-#define DEVICENAME "LED-L"
-
 
 
 enum States { SOLID, BLINK , FADE, RAINBOW};
@@ -91,7 +89,7 @@ void setup(void)
   }
 
   Serial.println(F("Changing Name to LED-L"));
-  if (! ble.sendCommandCheckOK(F( "AT+GAPDEVNAME="+DEVICENAME )) ) {
+  if (! ble.sendCommandCheckOK(F( "AT+GAPDEVNAME=LED-R" )) ) {
     error(F("Could not set device name?"));
   }
 
